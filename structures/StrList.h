@@ -38,4 +38,11 @@ char* getFromStrList(StrList list, int index){
     return list.elems[index];
 }
 
+/* PRINTING UTILITIES */
+void printStrList(StrList l){
+    printf("[ ");
+    for(int i = 0; i < l.size-1; i++) printf("%s, ", l.elems[i]);
+    printf("%s ]", l.elems[l.size-1]);
+}
+
 #endif

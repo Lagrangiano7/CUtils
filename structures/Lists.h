@@ -28,4 +28,12 @@ DoubleList: setToDoubleList, \
 StrList: setToStrList \
 ) (L, index, val)
 
+
+#define printList(L) _Generic((L), \
+IntList: printIntList, \
+LongList: printLongList, \
+DoubleList: printDoubleList, \
+StrList: printStrList \
+) (L)
+
 #endif

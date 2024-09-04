@@ -61,6 +61,10 @@ double popFromDoubleList(DoubleList *list) {
 }
 
 /* PRINTING UTILITIES */
-
+void printDoubleList(DoubleList l){
+    printf("[ ");
+    for(int i = 0; i < l.size; i++) printf("%f ", l.elems[i]);
+    printf("]");
+}
 
 #endif
