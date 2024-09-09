@@ -1,8 +1,13 @@
 #ifndef _MAP_H
 #define _MAP_H 1
 
+/* Redo this file without list generics in order to avoid redefining get and similar in structures.h */
+
 #include <stdint.h>
-#include "Lists.h"
+#include "IntList.h"
+#include "StrList.h"
+#include "LongList.h"
+#include "DoubleList.h"
 #include "../string/Strcmp.h"
 
 typedef struct {
@@ -21,8 +26,8 @@ SIMap makeSIMap(){
 }
 
 void addSIMapEntry(SIMap *m, char* key, int val){
-    append(&(m->keys), key);
-    append(&(m->vals) ,val);
+    appendToStrList(&(m->keys), key);
+    appendToIntList(&(m->vals) ,val);
     m->size++;
 }
 
@@ -41,7 +46,7 @@ int getSIMApEntry(SIMap m, char* key){
 void printSIMap(SIMap m){
     printf("{ ");
     for(int i = 0; i < m.size-1; i++) printf("%s : %d, ", m.keys.elems[i], m.vals.elems[i]);
-    printf("%s : %d }", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
+    printf("%s : %d }\n", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
 }
 
 /* String-Long Map */
@@ -79,10 +84,10 @@ long getSLMapEntry(SLMap m, char* key){
     return -1;
 }
 
-void printSILap(SLMap m){
+void printSLMap(SLMap m){
     printf("{ ");
     for(int i = 0; i < m.size-1; i++) printf("%s : %ld, ", m.keys.elems[i], m.vals.elems[i]);
-    printf("%s : %ld }", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
+    printf("%s : %ld }\n", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
 }
 
 /*String-Double Map*/
@@ -102,8 +107,8 @@ SDMap makeSDMap(){
 }
 
 void addSDMapEntry(SDMap *m, char* key, double val){
-    append(&(m->keys), key);
-    append(&(m->vals) ,val);
+    appendToStrList(&(m->keys), key);
+    appendToDoubleList(&(m->vals) ,val);
     m->size++;
 }
 
@@ -122,7 +127,7 @@ double getSDMapEntry(SDMap m, char* key){
 void printSDMap(SDMap m){
     printf("{ ");
     for(int i = 0; i < m.size-1; i++) printf("%s : %f, ", m.keys.elems[i], m.vals.elems[i]);
-    printf("%s : %f }", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
+    printf("%s : %f }\n", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
 }
 
 /*String-String Map*/
@@ -142,8 +147,8 @@ SSMap makeSSMap(){
 }
 
 void addSSMapEntry(SSMap *m, char* key, char* val){
-    append(&(m->keys), key);
-    append(&(m->vals) ,val);
+    appendToStrList(&(m->keys), key);
+    appendToStrList(&(m->vals) ,val);
     m->size++;
 }
 
@@ -162,7 +167,7 @@ char* getSSMapEntry(SSMap m, char* key){
 void printSSMap(SSMap m){
     printf("{ ");
     for(int i = 0; i < m.size-1; i++) printf("%s : %s, ", m.keys.elems[i], m.vals.elems[i]);
-    printf("%s : %s }", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
+    printf("%s : %s }\n", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
 }
 
 #endif

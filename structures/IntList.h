@@ -64,7 +64,7 @@ int popFromIntList(IntList *list) {
 void printIntList(IntList l){
     printf("[ ");
     for(int i = 0; i < l.size; i++) printf("%d ", l.elems[i]);
-    printf("]");
+    printf("]\n");
 }
 
 #endif

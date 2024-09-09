@@ -60,11 +60,13 @@ long popFromLongList(LongList *list) {
     return lastVal;
 }
 
+
+
 /* PRINTING UTILITIES */
 void printLongList(LongList l){
     printf("[ ");
     for(int i = 0; i < l.size; i++) printf("%ld ", l.elems[i]);
-    printf("]");
+    printf("]\n");
 }
 
 #endif

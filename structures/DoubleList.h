@@ -60,11 +60,12 @@ double popFromDoubleList(DoubleList *list) {
     return lastVal;
 }
 
+
 /* PRINTING UTILITIES */
 void printDoubleList(DoubleList l){
     printf("[ ");
     for(int i = 0; i < l.size; i++) printf("%f ", l.elems[i]);
-    printf("]");
+    printf("]\n");
 }
 
 #endif
