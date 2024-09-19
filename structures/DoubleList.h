@@ -78,4 +78,16 @@ void SortDoubleList(DoubleList *l){
     qsort(l->elems, l->size, sizeof(double), compareDoubles);
 }
 
+/* FINDING UTILITIES */
+IntList ReverseFindDoubleList(DoubleList l, double elem){
+    // Find indexes of all instances of element in IntList
+    IntList indexes = makeIntList();
+    for(int i = 0; i < l.size; i++){
+        if(l.elems[i]==elem) appendToIntList(&indexes, i);
+    }
+    
+    return indexes;
+    
+}
+
 #endif

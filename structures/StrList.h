@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include "../string/Strcmp.h"
 
 typedef struct {
     uint8_t size;
@@ -51,6 +52,18 @@ void printStrList(StrList l){
     printf("[ ");
     for(int i = 0; i < l.size-1; i++) printf("%s, ", l.elems[i]);
     printf("%s ]\n", l.elems[l.size-1]);
+}
+
+/* FINDING UTILITIES */
+IntList ReverseFindStrList(StrList l, const char* elem){
+    // Find indexes of all instances of element in IntList
+    IntList indexes = makeIntList();
+    for(int i = 0; i < l.size; i++){
+        if(Strcmp(l.elems[i], elem)) appendToIntList(&indexes, i);
+    }
+    
+    return indexes;
+    
 }
 
 #endif

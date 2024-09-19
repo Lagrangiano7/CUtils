@@ -1,7 +1,7 @@
 #ifndef _STRUCTURES_H
 #define _STRUCTURES_H 1
 
-#include "IntList.h"
+#include "IntList.h" // Has to be on top for dependencies not to break in Reverse Finds
 #include "StrList.h"
 #include "LongList.h"
 #include "DoubleList.h"
@@ -27,6 +27,13 @@ IntList: SortIntList, \
 LongList: SortLongList, \
 DoubleList: SortDoubleList \
 )(L)
+
+#define getIndex(L, val) _Generic((L), \
+IntList: ReverseFindIntList, \
+LongList: ReverseFindLongList, \
+DoubleList: ReverseFindDoubleList, \
+StrList: ReverseFindStrList \
+)(L, val)
 
 // Just maps
 #define addMapEntry(MAP, key, val) _Generic((*MAP), \

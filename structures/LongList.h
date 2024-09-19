@@ -79,4 +79,16 @@ void SortLongList(LongList *l){
     qsort(l->elems, l->size, sizeof(long), compareLongs);
 }
 
+/* FINDING UTILITIES */
+IntList ReverseFindLongList(LongList l, long elem){
+    // Find indexes of all instances of element in IntList
+    IntList indexes = makeIntList();
+    for(int i = 0; i < l.size; i++){
+        if(l.elems[i]==elem) appendToIntList(&indexes, i);
+    }
+    
+    return indexes;
+    
+}
+
 #endif
