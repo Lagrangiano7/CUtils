@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 
 typedef struct {
     uint8_t size;
@@ -36,6 +37,13 @@ void setToStrList(StrList *list, uint8_t index, char* val){
 
 char* getFromStrList(StrList list, int index){
     return list.elems[index];
+}
+
+char* popFromStrList(StrList *list){
+    char* lastVal = list->elems[list->size-1];
+    list->elems[list->size-1]="";
+    list->size--;
+    return lastVal;
 }
 
 /* PRINTING UTILITIES */
