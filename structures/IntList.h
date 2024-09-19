@@ -67,4 +67,14 @@ void printIntList(IntList l){
     printf("]\n");
 }
 
+/* SORTING UTILITIES */
+
+int compareInts(const void* a, const void* b) {
+    return (*(int*)a - *(int*)b);
+}
+
+void SortIntList(IntList *l){
+    qsort(l->elems, l->size, sizeof(int), compareInts);
+}
+
 #endif

@@ -69,4 +69,14 @@ void printLongList(LongList l){
     printf("]\n");
 }
 
+/* SORTING UTILITIES */
+
+int compareLongs(const void* a, const void* b) {
+    return (*(long*)a - *(long*)b);
+}
+
+void SortLongList(LongList *l){
+    qsort(l->elems, l->size, sizeof(long), compareLongs);
+}
+
 #endif

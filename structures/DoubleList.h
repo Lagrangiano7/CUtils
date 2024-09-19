@@ -68,4 +68,14 @@ void printDoubleList(DoubleList l){
     printf("]\n");
 }
 
+/* SORTING UTILITIES */
+
+int compareDoubles(const void* a, const void* b) {
+    return (*(double*)a - *(double*)b);
+}
+
+void SortDoubleList(DoubleList *l){
+    qsort(l->elems, l->size, sizeof(double), compareDoubles);
+}
+
 #endif

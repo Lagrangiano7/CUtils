@@ -1,5 +1,5 @@
-#ifndef _COUNT_CHAR_1
-#define _COUNT_CHAR_1 1
+#ifndef _COUNT_CHAR_H
+#define _COUNT_CHAR_H 1
 
 int CountChar(const char* str, char c){
     int count = 0;

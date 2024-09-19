@@ -22,6 +22,12 @@ DoubleList: setToDoubleList, \
 StrList: setToStrList \
 ) (L, index, val)
 
+#define sort(L) _Generic((*L), \
+IntList: SortIntList, \
+LongList: SortLongList, \
+DoubleList: SortDoubleList \
+)(L)
+
 // Just maps
 #define addMapEntry(MAP, key, val) _Generic((*MAP), \
 SIMap: addSIMapEntry, \
