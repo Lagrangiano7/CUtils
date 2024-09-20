@@ -91,4 +91,73 @@ IntList ReverseFindLongList(LongList l, long elem){
     
 }
 
+/* ARITHMETIC UTILITIES */
+
+// LongList addition: return type is IntList instead of void because, otherwise, we would have to overwrite either one of the two lists. We would be deliberately losing information without the need of it
+LongList addLongLists(LongList l1, LongList l2){
+    LongList temp = makeLongList();
+
+    // Check if both lists are equal
+    if (l1.size != l2.size) {
+        puts("Error: Lists must be the same size to be added");
+        return temp;
+    }
+
+    // Check if lists are empty
+    if(l1.size==-1) return temp;
+
+    // If everything is OK, proceed with adition of elements
+    
+    for(int i = 0; i < l1.size; i++){
+        appendToLongList(&temp, l1.elems[i]+l2.elems[i]);
+    }
+
+    return temp;
+    
+}
+
+LongList subtractLongLists(LongList l1, LongList l2){
+    LongList temp = makeLongList();
+
+    // Check if both lists are equal
+    if (l1.size != l2.size) {
+        puts("Error: Lists must be the same size to be subtracted");
+        return temp;
+    }
+
+    // Check if lists are empty
+    if(l1.size==-1) return temp;
+
+    // If everything is OK, proceed with adition of elements
+    
+    for(int i = 0; i < l1.size; i++){
+        appendToLongList(&temp, l1.elems[i]-l2.elems[i]);
+    }
+
+    return temp;
+    
+}
+
+LongList multiplyLongLists(LongList l1, LongList l2){
+    LongList temp = makeLongList();
+
+    // Check if both lists are equal
+    if (l1.size != l2.size) {
+        puts("Error: Lists must be the same size to be multiplied");
+        return temp;
+    }
+
+    // Check if lists are empty
+    if(l1.size==-1) return temp;
+
+    // If everything is OK, proceed with adition of elements
+    
+    for(int i = 0; i < l1.size; i++){
+        appendToLongList(&temp, l1.elems[i]*l2.elems[i]);
+    }
+
+    return temp;
+    
+}
+
 #endif

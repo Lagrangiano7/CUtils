@@ -7,6 +7,7 @@
 #include "IntList.h"
 #include "StrList.h"
 #include "LongList.h"
+#include "FloatList.h"
 #include "DoubleList.h"
 #include "../string/Strcmp.h"
 
@@ -88,6 +89,47 @@ void printSLMap(SLMap m){
     printf("{ ");
     for(int i = 0; i < m.size-1; i++) printf("%s : %ld, ", m.keys.elems[i], m.vals.elems[i]);
     printf("%s : %ld }\n", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
+}
+
+/* String-Float Map */
+
+typedef struct {
+    StrList keys;
+    FloatList vals;
+    uint8_t size;
+    
+} SFMap;
+
+SFMap makeSFMap(){
+    SFMap m;
+    m.keys = makeStrList();
+    m.vals = makeFloatList();
+    m.size = 0;
+    return m;
+}
+
+void addSFMapEntry(SFMap *m, char* key, float val){
+    appendToStrList(&(m->keys), key);
+    appendToFloatList(&(m->vals) ,val);
+    m->size++;
+}
+
+int getSFMApEntry(SFMap m, char* key){
+    // Get index of key in the StrList
+    for(int i = 0; i < m.size; i++){
+        if (Strcmp(key, m.keys.elems[i])) {
+            return m.vals.elems[i];
+        }
+    }
+
+    printf("Key not found: %s", key);
+    return -1;
+}
+
+void printSFMap(SFMap m){
+    printf("{ ");
+    for(int i = 0; i < m.size-1; i++) printf("%s : %f, ", m.keys.elems[i], m.vals.elems[i]);
+    printf("%s : %f }\n", m.keys.elems[m.size-1], m.vals.elems[m.size-1]);
 }
 
 /*String-Double Map*/

@@ -7,18 +7,19 @@
 #include "../string/Strcmp.h"
 
 typedef struct {
-    uint8_t size;
+    int size;
     char* elems[127];
 } StrList;
 
 StrList makeStrList(){
-    StrList list = {1, {}};
+    StrList list = {-1, {}};
     return list;
 }
 
 void appendToStrList(StrList *list, char* str){
-    if(list->elems[0]==NULL){
+    if(list->size==-1){
         list->elems[0]=str;
+        list->size=1;
         return;
     }
 
