@@ -40,6 +40,28 @@ DoubleList: ReverseFindDoubleList, \
 StrList: ReverseFindStrList \
 )(L, val)
 
+#define add(L1, L2) _Generic((L1), \
+IntList: addIntLists, \
+LongList: addLongLists, \
+FloatList: addFloatLists, \
+DoubleList: addDoubleLists \
+)(L1, L2)
+
+#define subtract(L1, L2) _Generic((L1), \
+IntList: subtractIntLists, \
+LongList: subtractLongLists, \
+FloatList: subtractFloatLists, \
+DoubleList: subtractDoubleLists \
+)(L1, L2)
+
+// TODO: check if when multiplying one list by another, we don't overflow
+#define multiply(L1, L2) _Generic((L1), \
+IntList: multiplyIntLists, \
+LongList: multiplyLongLists, \
+FloatList: multiplyFloatLists, \
+DoubleList: multiplyDoubleLists \
+)(L1, L2)
+
 // TODO: add scale feature:
     // Scale by int: scaled List conserves its type
     // Scale by long: scale List conserves its type BUT IntList --> LongList
