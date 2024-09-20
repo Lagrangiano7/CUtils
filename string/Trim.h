@@ -4,16 +4,16 @@
 #include "Strinv.h"
 
 //  Returns left-trimmed string
-char* TrimLeft(char* str) {
+const char* TrimLeft(const char* str) {
     while(*str==' ') str++;
     return str;
 }
 
-char* TrimRight(char* str) {
+const char* TrimRight(const char* str) {
     return Strinv(TrimLeft(Strinv(str)));
 }
 
-char* Trim(char* str){
+const char* Trim(const char* str){
     return TrimLeft(TrimRight(str));
 }
 

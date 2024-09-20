@@ -6,7 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char* Slice(const char* str, uint8_t start, uint8_t end){
+const char* Slice(const char* str, uint8_t start, uint8_t end){
     const char* tmp = str;
     uint8_t ind = start; // For max memory usage, we could use the very variable "start" as index, but the code would be more confusing
 
@@ -16,7 +16,7 @@ char* Slice(const char* str, uint8_t start, uint8_t end){
     // Go to start
     str+=start;
 
-    while(ind < end){
+    while(ind <= end){
         substr[ind-start]=*str;
         ind++;
         str++;

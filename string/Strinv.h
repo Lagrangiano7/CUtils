@@ -8,7 +8,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-char* Strinv(char* str_ptr){
+const char* Strinv(const char* str_ptr){
 
     char str[Strlen(str_ptr)];
     strcpy(str, str_ptr);

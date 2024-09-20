@@ -114,7 +114,7 @@ void addSFMapEntry(SFMap *m, char* key, float val){
     m->size++;
 }
 
-int getSFMApEntry(SFMap m, char* key){
+int getSFMapEntry(SFMap m, char* key){
     // Get index of key in the StrList
     for(int i = 0; i < m.size; i++){
         if (Strcmp(key, m.keys.elems[i])) {
