@@ -12,7 +12,11 @@ CUtils is a library that allows the user to implement in C all of the data struc
 
 # Quick Start Demo
 
-![Demo Preview](https://raw.githubusercontent.com/Lagrangiano7/CUtils/refs/heads/main/logo.png)
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Lagrangiano7/CUtils/refs/heads/main/logo.png" alt="logo" width="300" />
+</p>
+
 
 CUtils has two main goals regarding the end user: make the hasty coding process easy and prioritize memory-efficiency. Let us have a look at the most common structures you will be using:
 
