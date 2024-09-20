@@ -104,6 +104,7 @@ IntList  l  =  makeIntList();
 
 printf("%d", l.size);
 
+
 // APPENDING TO LIST:
 
 append(&l, 10);
@@ -114,6 +115,7 @@ append(&l, 10);
 
 // Array is now [ 10 20 10 ]
 
+
 // GETTING ELEMENT FROM LIST:
 
 int  elem_0  =  get(l,0); // Returns 10
@@ -123,9 +125,11 @@ int  elem_0  =  get(l,0); // Returns 10
 
 set(&l, 1, -39);
 
+
 // SORTING ARRAY
 
 sort(&l); // Array is now [ -39 10 10 ]
+
 
 // IN WHICH INDEXES IS THERE AN OCCURRENCE OF 10?
 
@@ -134,6 +138,7 @@ IntList  indexes  =  getIndex(l, 10); // Indexes: [ 1 2 ]
 // LET US PRINT THE "INDEXES" LIST TO VISUALIZE IT
 
 printData(indexes);
+
 
 // LET'S MAKE ANOTHER INTLIST AND ADD IT TO THE ORIGINAL
 
@@ -156,14 +161,22 @@ IntList  subtraction  =  subtract(l, l2); // subtraction: [ -69 -60 -80 ]
 
 IntList  product  =  multiply(l, l2); // product: [ -1170 700 900 ]
 
+
 // COMMENT: STRLIST DOES NOT HAVE ALL THESE FEATURES DEFINED, SINCE NOT ALL OF THEM MAKE SENSE
 
-// IN STRINGS (i.e: YOU CANNOT TAKE THE PRODUCT OF 2 STRINGS)
+// IN STRINGS (i.e: YOU CANNOT TAKE THE PRODUCT OF 2 STRINGS)ç
+```
 
+### Maps
 
+Maps in CUtils are just like those in C++ or Dictionaries in Python. All of them are defined with string-type keys, because if one wanted to use integer keys, for instance, it would be more convenient and memory-efficient to just use an IntList. Let us review the features of Maps in CUtils:
 
-/* MAPS */
+- makeSXMap: acts as a constructor for string-type keys and X-type values (where X can be Int, Float, Double or Str)
+- addMapEntry: adds a pair {Key: value} to the map
+- get: returns the value corresponding to a given key
+- printData: prints the contents of the Map formatted in Python style
 
+```C
 // CREATING A STRING-INT MAP (SIMap)
 SIMap  m  =  makeSIMap();
 
@@ -188,15 +201,6 @@ printData(m); // { First key : 10, Second key : -20 }
 return  0;
 }
 ```
-
-### Maps
-
-Maps in CUtils are just like those in C++ or Dictionaries in Python. All of them are defined with string-type keys, because if one wanted to use integer keys, for instance, it would be more convenient and memory-efficient to just use an IntList. Let us review the features of Maps in CUtils:
-
-- makeSXMap: acts as a constructor for string-type keys and X-type values (where X can be Int, Float, Double or Str)
-- addMapEntry: adds a pair {Key: value} to the map
-- get: returns the value corresponding to a given key
-- printData: prints the contents of the Map formatted in Python style
 
 ## String
 
