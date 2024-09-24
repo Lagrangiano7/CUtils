@@ -29,7 +29,7 @@ append(&l, 10);
 
 append(&l, 20);
 
-printData(l) // Yields [ 10 20 ]
+printData(l) // Prints [ 10 20 ]
 ```
 
 2. SIMap (expansable String-Integer Maps / Dictionaries)
@@ -40,7 +40,7 @@ addMapEntry(&m, "First key", 10);
 
 addMapEntry(&m, "Second key", 20);
 
-printData(m) // Yields {"First key" : 10, "Second key" : 20}
+printData(m) // Prints {"First key" : 10, "Second key" : 20}
 ```
 
 Naturally, Lists and Maps are defined for several datatypes, including numeric and strings
@@ -48,7 +48,6 @@ Naturally, Lists and Maps are defined for several datatypes, including numeric a
 # Table of Contents
 - [CUtils](#cutils)
 - [Quick Start Demo](#quick-start-demo)
-- [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Development](#development)
